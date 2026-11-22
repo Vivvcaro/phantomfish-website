@@ -57,7 +57,7 @@ img { display: block; max-width: 100%; height: auto; }
 .glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(170px);
+  filter: blur(85px);
   pointer-events: none;
   z-index: 0;
 }
@@ -242,7 +242,7 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 760px) {
   .nav { height: 88px; padding: 0 16px; }
   .nav__logo img { width: 156px; }
-  .glow { filter: blur(90px); }
+  .glow { filter: blur(45px); }
   .glow--lavender { left: -30%; top: 140px; width: 380px; height: 380px; }
   .glow--pink     { left: 30%;  top: 260px; width: 340px; height: 340px; }
   .glow--peach    { left: 50%;  top: 90px;  width: 300px; height: 300px; }
