@@ -201,7 +201,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* Footer */
 .footer {
   position: relative;
-  height: 297px;
+  z-index: 2;
+  height: 400px;
   padding: 90px 64px 0 89px;
   display: flex;
   justify-content: space-between;
@@ -215,7 +216,6 @@ img { display: block; max-width: 100%; height: auto; }
   left: 103px;
   top: -134px;
   width: 425px;
-  mix-blend-mode: screen;
   pointer-events: none;
 }
 .footer__name {
