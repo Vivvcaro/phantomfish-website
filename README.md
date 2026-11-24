@@ -13,5 +13,5 @@ The site can be published with GitHub Pages: in the repository's Settings, choos
 ## Still to fill in before it goes live
 
 - Subscribe: for now the button opens an email to hello@phantomfish.com with the subject "Subscribe to Phantom Fish research news". A proper mailing-list sign-up can replace it once one is chosen.
-- Where the buttons lead: Visit Phononaut, Download the app, See upcoming dates and LinkedIn (currently `#`).
+- Where the buttons lead: Download the app, See upcoming dates and LinkedIn (currently `#`).
 - The email address: the contact button uses hello@phantomfish.com, which needs the domain.
