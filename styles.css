@@ -263,8 +263,8 @@ img { display: block; max-width: 100%; height: auto; }
   .statement { padding: 96px 16px; }
   .statement p { font-size: 44px; }
   .contact__text { margin: 32px auto; font-size: 24px; }
-  .footer { height: auto; flex-direction: column; gap: 28px; padding: 64px 16px 48px; }
-  .footer__fish { left: 0; top: -60px; width: 260px; }
+  .footer { height: auto; flex-direction: column; gap: 28px; padding: 210px 16px 48px; }
+  .footer__fish { left: auto; right: -10px; top: -70px; width: 230px; }
   .footer__name { font-size: 60px; }
   .footer__side { width: auto; padding-top: 0; }
 }
