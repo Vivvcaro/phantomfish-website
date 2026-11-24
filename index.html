@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1795480149">
+  <link rel="stylesheet" href="styles.css?v=1795481313">
 </head>
 <body>
 
@@ -98,7 +98,8 @@
         <h2 id="contact-title">Work with us</h2>
       </div>
       <p class="contact__text">Working on something with immersive sound, psychedelics, consciousness for wellbeing?<br>We’d like to hear about it.</p>
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/moedpyzq" method="POST" novalidate>
+      <button type="button" class="button contact-open" id="contact-open" aria-expanded="false" aria-controls="contact-form">Get in touch&nbsp;&nbsp;→</button>
+      <form class="contact-form" id="contact-form" hidden action="https://formspree.io/f/moedpyzq" method="POST" novalidate>
         <input type="hidden" name="list" value="Phantom Fish contact">
         <label class="contact-form__label" for="cf-subject">Subject</label>
         <input class="contact-form__input" type="text" id="cf-subject" name="_subject" required>
@@ -129,6 +130,11 @@
     (function () {
       const form = document.getElementById("contact-form");
       if (!form) return;
+      const openBtn = document.getElementById("contact-open");
+      openBtn.addEventListener("click", () => {
+        form.hidden = false; openBtn.hidden = true; openBtn.setAttribute("aria-expanded", "true");
+        document.getElementById("cf-subject").focus();
+      });
       const error = document.getElementById("cf-error"), done = document.getElementById("cf-done"), send = document.getElementById("cf-send");
       form.addEventListener("submit", async (e) => {
         e.preventDefault(); error.textContent = "";
