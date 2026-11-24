@@ -98,7 +98,18 @@
         <h2 id="contact-title">Work with us</h2>
       </div>
       <p class="contact__text">Working on something with immersive sound, psychedelics, consciousness for wellbeing?<br>We’d like to hear about it.</p>
-      <a class="button" href="mailto:hello@phantomfish.com">hello@phantomfish.com&nbsp;&nbsp;→</a>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/moedpyzq" method="POST" novalidate>
+        <input type="hidden" name="list" value="Phantom Fish contact">
+        <label class="contact-form__label" for="cf-subject">Subject</label>
+        <input class="contact-form__input" type="text" id="cf-subject" name="_subject" required>
+        <label class="contact-form__label" for="cf-message">Message</label>
+        <textarea class="contact-form__input contact-form__area" id="cf-message" name="message" rows="5" required></textarea>
+        <label class="contact-form__label" for="cf-email">Your email</label>
+        <input class="contact-form__input" type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@example.com">
+        <p class="contact-form__error" id="cf-error" role="alert"></p>
+        <button class="button contact-form__send" type="submit" id="cf-send">Send&nbsp;&nbsp;→</button>
+        <p class="contact-form__done" id="cf-done" role="status" hidden>Thank you, we’ll be in touch.</p>
+      </form>
     </section>
 
   </main>
@@ -114,5 +125,29 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+      const error = document.getElementById("cf-error"), done = document.getElementById("cf-done"), send = document.getElementById("cf-send");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); error.textContent = "";
+        const checks = [["cf-subject", "Please add a subject."], ["cf-message", "Please write a message."], ["cf-email", "Please enter a valid email address."]];
+        for (const [id, msg] of checks) {
+          const el = document.getElementById(id); el.removeAttribute("aria-invalid");
+          if (!el.checkValidity()) { el.setAttribute("aria-invalid", "true"); el.focus(); error.textContent = msg; return; }
+        }
+        send.disabled = true; const label = send.innerHTML; send.textContent = "Sending…";
+        try {
+          const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+          if (!res.ok) throw new Error();
+          [...form.children].forEach((el) => { if (el !== done) el.hidden = true; });
+          done.hidden = false;
+        } catch (err) {
+          error.textContent = "Something went wrong. Please try again in a moment.";
+        } finally { send.disabled = false; send.innerHTML = label; }
+      });
+    })();
+  </script>
 </body>
 </html>
