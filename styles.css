@@ -330,3 +330,6 @@ img { display: block; max-width: 100%; height: auto; }
   .orb__ball{width:min(320px,82vw)}
 }
 @media (prefers-reduced-motion:reduce){.orb__ball{transition:none}.orb__ball:hover{transform:none}}
+/* on the pearl sphere the words sit a little higher, leaving room for its button */
+.orb__ball--pearl .orb__mark{top:36%}
+.orb__ball--pearl .orb__word{top:56%}
