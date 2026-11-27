@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1795481313">
+  <link rel="stylesheet" href="styles.css?v=20261127">
 </head>
 <body>
 
@@ -37,47 +37,49 @@
         <h2 id="products-title">Our products</h2>
       </div>
 
-      <article class="product">
-        <img class="product__picture" src="images/phononaut.png?v=2" width="520" height="520"
-             alt="The Phononaut logo, the snailfish beside the name, on dark sea water">
-        <div class="product__words">
-          <p class="product__number">01</p>
+      <div class="trio">
+        <svg class="trio__lines" viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M500 230 L230 640 L770 640 Z M500 230 L500 60 M230 640 L40 760 M770 640 L960 760 M500 230 L860 120 M230 640 L120 420"/>
+        </svg>
+
+        <article class="orb orb--top">
+          <div class="orb__ball orb__ball--sea">
+            <img src="images/phononaut-logo.jpg" width="478" height="478" alt="The Phononaut logo: the name above the snailfish, on dark sea water">
+            <a class="orb__button" href="https://phononaut.com">Visit Phononaut&nbsp;&nbsp;→</a>
+          </div>
+          <p class="orb__number">01</p>
           <h3>Phononaut App</h3>
-          <p class="product__text">Sonic doses that change perspectives: guided dives into music, on your phone.</p>
-          <div class="buttons">
-            <a class="button" href="https://phononaut.com">Visit Phononaut&nbsp;&nbsp;→</a>
-            <a class="button" href="#">Download the app&nbsp;&nbsp;↓</a>
-          </div>
-        </div>
-      </article>
+          <p class="orb__text">Sonic doses that change perspectives: guided dives into music, on your phone.</p>
+        </article>
 
-      <article class="product product--flip">
-        <img class="product__picture" src="images/acoustic-states.png" width="520" height="520"
-             alt="The Acoustic States logo, a glowing keyhole, on night blue">
-        <div class="product__words">
-          <p class="product__number">02</p>
+        <article class="orb orb--left">
+          <a class="orb__ball orb__ball--pearl" href="https://acousticstates.com" aria-label="Acoustic States of Consciousness, visit acousticstates.com">
+            <svg class="orb__mark" viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <linearGradient id="asLine" gradientUnits="userSpaceOnUse" x1="10" y1="80" x2="72" y2="32"><stop offset="0" stop-color="#8f88d6"/><stop offset=".55" stop-color="#a796e6"/><stop offset=".82" stop-color="#ff9fbf"/><stop offset="1" stop-color="#ff8a5c"/></linearGradient>
+                <radialGradient id="asHalo"><stop offset="0" stop-color="#ff6a3a" stop-opacity=".9"/><stop offset=".32" stop-color="#ff8fb8" stop-opacity=".7"/><stop offset=".68" stop-color="#c7a6f2" stop-opacity=".4"/><stop offset="1" stop-color="#c7a6f2" stop-opacity="0"/></radialGradient>
+              </defs>
+              <circle cx="74" cy="28" r="19" fill="url(#asHalo)"/>
+              <path d="M4 60 H20 C30 60 34 86 45 86 C56 86 62 58 71 34" fill="none" stroke="url(#asLine)" stroke-width="3.4" stroke-linecap="round"/>
+              <circle cx="74" cy="28" r="5.5" fill="#2a2540"/>
+            </svg>
+            <span class="orb__word" aria-hidden="true">ΛCOUSTIC STΛTES<small>OF CONSCIOUSNESS</small></span>
+          </a>
+          <p class="orb__number">02</p>
           <h3>Acoustic States</h3>
-          <p class="product__text">Live listening performances, where everyone listens at once.</p>
-          <div class="buttons">
-            <a class="button" href="https://www.acousticstates.com">See upcoming dates&nbsp;&nbsp;→</a>
+          <p class="orb__text">Live listening performances, where everyone listens at once.</p>
+        </article>
+
+        <article class="orb orb--right">
+          <div class="orb__ball orb__ball--photo">
+            <img src="images/research-acoustic-states.jpg" width="1200" height="900" alt="Hands raised in a listening session under a domed ceiling">
+            <a class="orb__button" href="mailto:hello@phantomfish.com?subject=Subscribe%20to%20Phantom%20Fish%20research%20news">Subscribe</a>
           </div>
-        </div>
-      </article>
-
-      <hr class="divider">
-
-      <article class="product">
-        <img class="product__picture" src="images/research.png" width="520" height="520"
-             alt="Rings of light on black">
-        <div class="product__words">
-          <p class="product__number">03</p>
+          <p class="orb__number">03</p>
           <h3>Research</h3>
-          <p class="product__text">Be the first to know when we are recruiting participants for our research or to read about our publications</p>
-          <div class="buttons">
-            <a class="button" href="mailto:hello@phantomfish.com?subject=Subscribe%20to%20Phantom%20Fish%20research%20news">Subscribe</a>
-          </div>
-        </div>
-      </article>
+          <p class="orb__text">Be the first to know when we are recruiting participants for our research or to read about our publications.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section about" aria-labelledby="about-title">

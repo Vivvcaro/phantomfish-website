@@ -293,3 +293,40 @@ img { display: block; max-width: 100%; height: auto; }
 .contact-form:not([hidden]) { animation: formIn .35s ease; }
 @keyframes formIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .contact-form:not([hidden]) { animation: none; } }
+
+/* ---- Our products: three spheres in a triangle (27 Nov 2026) ----
+   Phononaut at the top, Acoustic States and Research below, joined by fine dotted lines */
+.trio{position:relative;width:100%;max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"top top" "left right";gap:24px 60px;padding:20px 0 40px}
+.trio__lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.trio__lines path{fill:none;stroke:#9d93c9;stroke-opacity:.45;stroke-width:1;stroke-dasharray:1 5;vector-effect:non-scaling-stroke}
+.orb{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.orb--top{grid-area:top}
+.orb--left{grid-area:left}
+.orb--right{grid-area:right}
+.orb__ball{position:relative;display:block;width:min(380px,80vw);aspect-ratio:1;border-radius:50%;overflow:hidden;margin-bottom:14px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.9),0 0 0 9px rgba(255,255,255,.35),0 0 0 10px rgba(157,147,201,.35),0 40px 70px -30px rgba(60,40,120,.45);
+  transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .6s ease}
+.orb__ball:hover{transform:translateY(-4px)}
+.orb__ball img{width:100%;height:100%;object-fit:cover}
+.orb__ball--sea{background:#0b2233}
+/* a soft light on each sphere, so they read as round, not flat discs */
+.orb__ball::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 32% 24%,rgba(255,255,255,.28),rgba(255,255,255,0) 38%),radial-gradient(circle at 70% 85%,rgba(0,0,0,0),rgba(0,0,0,.18) 80%)}
+.orb__ball--pearl{background:radial-gradient(circle at 30% 26%,#fff 0%,#f1ecfb 18%,#d9cdf3 44%,#c3b3ea 66%,#b2a2e2 100%);text-decoration:none}
+.orb__ball--pearl::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 26% 30%,rgba(150,120,240,.55),rgba(150,120,240,0) 42%),radial-gradient(circle at 72% 70%,rgba(255,170,140,.5),rgba(255,170,140,0) 45%)}
+.orb__mark{position:absolute;left:50%;top:40%;width:34%;transform:translate(-50%,-50%);z-index:1}
+.orb__word{position:absolute;left:0;right:0;top:63%;z-index:1;font-family:var(--serif);font-weight:300;font-size:clamp(14px,1.7vw,19px);letter-spacing:.26em;padding-left:.26em;color:#2a2540;line-height:1.5}
+.orb__word small{display:block;font-size:.55em;letter-spacing:.42em;padding-left:.42em;color:#4d4775}
+.orb__button{position:absolute;left:50%;bottom:11%;transform:translateX(-50%);z-index:2;white-space:nowrap;font-size:13px;color:#fff;text-decoration:none;
+  padding:10px 20px;border-radius:999px;background:rgba(20,20,24,.55);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .3s ease}
+.orb__button:hover{background:rgba(20,20,24,.8)}
+.orb__number{font-size:18px;color:var(--ink)}
+.orb h3{font-size:clamp(26px,2.6vw,34px);line-height:1.2}
+.orb__text{max-width:330px;font-size:15px;line-height:1.5;color:var(--grey)}
+@media (max-width:760px){
+  .trio{grid-template-columns:1fr;grid-template-areas:"top" "left" "right";gap:56px}
+  .trio__lines{display:none}
+  .orb__ball{width:min(320px,82vw)}
+}
+@media (prefers-reduced-motion:reduce){.orb__ball{transition:none}.orb__ball:hover{transform:none}}
